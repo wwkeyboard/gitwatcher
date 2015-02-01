@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gitwatcher</title>
+  <link type="text/css" rel="stylesheet" href="/syntaxhighlighter/styles/shCoreEmacs.css"/>
+  <link type="text/css" rel="stylesheet" href="/gitwatcher.css"/>
+
+  <link rel='stylesheet' href='/index.css' type='text/css' media="screen, projection"/>
+  <script src="/jquery-1.4.2.min.js"></script>
+  <script src="/jquery.tmpl.js"></script>
+  <script src="/jquery.timeago.js"></script>
+  <script src="/jquery.unique.js"></script>
+  <script src="/knockout-1.1.2.debug.js"></script>
+  <script src="/watcher.js"></script>
+
+</head>
+<body id=''>
+
+<h2>Commits</h2>
+
+<div class="notice">
+</div>
+<section class="commits">
+  <% @commits.each do |commit| %>
+  <section class="commit" id="<%= commit[:id] %>">
+    <article class="date">
+      <abbr class="timeago" title="<%= commit[:date].iso8601 %>">
+        <%= commit[:date].strftime("%Y/%m/%d") %>
+      </abbr>
+    </article>
+    <article class="repo"><%= commit[:repository] %></article>
+    <article class="author"><%= commit[:author] %></article>
+    <article class="show">
+      <a href="<%= commit[:url] %>"
+         data-bind="click: function(){viewModel.showCommit('<%= commit[:url] %>', '#<%= commit[:id] %>')}">
+        show
+      </a>
+    </article>
+    <article class="hide">
+      <a href="#"
+         data-bind="click: function(){viewModel.hideCommit('#<%= commit[:id] %>')}">
+         hide</a>
+		</article>
+    <article class="message"><%= commit[:message] %></article>
+  </section>
+  <% end %>
+</section>
+</body>
+</html>

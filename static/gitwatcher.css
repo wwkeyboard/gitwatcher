@@ -1,0 +1,59 @@
+/* @override 
+	http://localhost:9393/gitwatcher.css
+*/
+
+body {
+	background-color: #ddf0fd;
+	font: small "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+section.commit {
+	background-color : white;
+	margin: 5px 10px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-webkit-box-shadow: 2px 2px 2px #c4d6e1;
+
+}
+
+article.date {
+	float : left;
+	font-family: "Courier New", Courier, mono;
+	letter-spacing: -2px;
+	padding-left: 10px;
+	padding-top: 3px;
+}
+
+article.author {
+	float : left;
+	margin-left: 15px;
+	font-weight: bold;
+	font-size: small;
+}
+
+article.repo {
+	float : right;
+	padding-top: 3px;
+	padding-right: 10px;
+}
+
+article.message {
+	padding-top: 7px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+}
+
+article.show, article.hide {
+	clear : both;
+	margin-left: 15px;
+}
+
+article.show a, article.hide a{
+	border-style: none;
+	color: #8e8e8e;
+	font-family: "Courier New", Courier, mono;
+}
+
+article.commit {
+	padding-left: 30px;
+}

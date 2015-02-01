@@ -1,0 +1,10 @@
+This is a basic tool for monitoring the commit timeline across several repositories. Many people have written many good tools for inspecting and modifying a single repository, but I have not been able to find a good one for watching commits as they come across several git repositories. I'm taking a stab at solving that problem here.
+
+Our team has about a dozen different projects in production, with a number of plugins shared between them. The most glaring use-case for gitwacher is seeing a checkin to one of those plugins, and seeing all of the subsequent checking using those changes. This tool aims to put that in front of you without the overhead of other git tools.
+
+To use gitwatcher, you need to have all of the projects you want to inspect in a single directory(e.g. ~/git/project_one, ~/git/project_two, etc). Just update the codehome file with the directory of your repos, and start he rack server(call `rackup` or `shotgun`).
+
+What about pulling updates to the repositories?
+You should already have scripts to do that for you, this tool is just for inspecting the order of commits. If it's really a pain then I'll look into adding the feature, but for now cron could be your friend.
+
+If you need any help, have comments, want to talk about the magic of using Sinatra to replace desktop apps, please contact me(@wwkeyboard).

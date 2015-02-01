@@ -1,0 +1,13 @@
+/* @override http://localhost:8090/index.css */
+
+tr.commits td.date {
+	width: 180px;
+}
+
+tr.commits td.repo{
+	width: 180px;
+}
+
+tr.commits td.author {
+	width: 180px;
+}
